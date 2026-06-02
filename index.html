@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Finder</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header>
+      <h1>Recipe Finder</h1>
+      <p>Search any recipe by name or ingredient</p>
+    </header>
+
+    <!-- Search -->
+    <main>
+      <section class="search-section">
+        <div class="search-bar">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search recipes..."
+            autocomplete="off"
+          />
+          <button id="search-btn">Search</button>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters">
+          <button class="filter-btn active" data-diet="">All</button>
+          <button class="filter-btn" data-diet="vegetarian">Vegetarian</button>
+          <button class="filter-btn" data-diet="vegan">Vegan</button>
+          <button class="filter-btn" data-diet="gluten free">Gluten Free</button>
+        </div>
+      </section>
+
+      <!-- Results -->
+      <section class="results-section">
+        <div id="results-container">
+          <p class="placeholder-text">Search for a recipe to get started 🍳</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Recipe Modal -->
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+        <button id="close-modal">✕</button>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+
+    <!-- Scripts — en este orden -->
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+
+  </body>
+</html>
