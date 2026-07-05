@@ -12,9 +12,6 @@ and the Spoonacular API.
 - HTML5, CSS3, Vanilla JavaScript
 - Spoonacular API
 
-## Demo
-[Live Demo](https://tu-link-en-vercel.com) 
-
 ![screenshot de la app](assets/screenshot.png)
 
 ## Run Locally
