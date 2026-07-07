@@ -73,7 +73,7 @@ function showRecipeDetail(recipe) {
 
     <div class="recipe-meta">
         <span> ${recipe.readyInMinutes} min</span>
-        <span> ${recipe.servings}</span>
+        <span>servings: ${recipe.servings}</span>
     </div>
 
     <h3>Ingredients:</h3>
