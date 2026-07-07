@@ -12,8 +12,6 @@ and the Spoonacular API.
 - HTML5, CSS3, Vanilla JavaScript
 - Spoonacular API
 
-![screenshot de la app](assets/screenshot.png)
-
 ## Run Locally
 1. Clone the repo
 2. Add your Spoonacular API key in js/config.js

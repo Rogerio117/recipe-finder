@@ -1,4 +1,7 @@
 const resultsContainer = document.getElementById('results-container')
+const modal = document.getElementById('modal')
+const modalBody = document.getElementById('modal-body')
+
 
 function showLoading() {
 
@@ -40,6 +43,7 @@ function showRecipes(recipes) {
     recipes.map(recipe => {
         const card = document.createElement('div')
         card.className = 'recipe-card'
+        card.dataset.id = recipe.id
         card.innerHTML = `
             <img src="${recipe.image}" alt="${recipe.title}" />
             <div class="recipe-card-body">
@@ -58,3 +62,40 @@ function showRecipes(recipes) {
     resultsContainer.appendChild(grid)
 
 }
+
+function showRecipeDetail(recipe) {
+
+    modalBody.innerHTML = `
+    
+    <img src="${recipe.image}" alt="${recipe.title}" />
+
+    <h2>${recipe.title}</h2>
+
+    <div class="recipe-meta">
+        <span> ${recipe.readyInMinutes} min</span>
+        <span> ${recipe.servings}</span>
+    </div>
+
+    <h3>Ingredients:</h3>
+    <ul>
+
+    ${recipe.extendedIngredients.map(ing => `<li>${ing.original}</li>`).join('')}
+
+    </ul>
+
+    <h3>Instructions</h3>
+    <p>${recipe.instructions}</p>
+
+    `
+    modal.classList.remove('hidden')
+
+}
+
+function closeModal() {
+  modal.classList.add('hidden')
+  modalBody.innerHTML = ''
+}
+
+modal.addEventListener('click', (event) => {
+  if (event.target === modal) closeModal()
+})

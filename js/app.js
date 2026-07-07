@@ -1,6 +1,7 @@
 const searchInput = document.getElementById('search-input')
 const searchBtn = document.getElementById('search-btn')
 const filterBtns = document.querySelectorAll('.filter-btn')
+const closeModalBtn = document.getElementById('close-modal')
 
 let currentDiet = ''
 
@@ -12,7 +13,7 @@ async function handleSearch() {
     showLoading()
 
     try {
-        const recipes = await searchRecipes(query)
+        const recipes = await searchRecipes(query, currentDiet)
 
         if (recipes.length === 0) {
             showNoResults()
@@ -41,3 +42,24 @@ filterBtns.forEach(btn => {
     handleSearch()
   })
 })
+
+resultsContainer.addEventListener('click', async (event) => {
+  const card = event.target.closest('.recipe-card')
+  if (!card) return
+
+  const recipeID = card.dataset.id
+
+  showLoading()
+
+  try {
+    const recipe = await getRecipeById(recipeID)
+    showRecipeDetail(recipe)
+  
+  } catch (error) {
+    showError('Could not load recipe details')
+  }
+
+})
+
+closeModalBtn.addEventListener('click', closeModal)
+
