@@ -12,6 +12,12 @@ and the Spoonacular API.
 - HTML5, CSS3, Vanilla JavaScript
 - Spoonacular API
 
+## Demo
+
+[Live Demo](https://tu-link-en-vercel.com)
+![Recipe Finder Screenshot](assets/app.png)
+
+
 ## Run Locally
 1. Clone the repo
 2. Add your Spoonacular API key in js/config.js
