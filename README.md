@@ -14,7 +14,7 @@ and the Spoonacular API.
 
 ## Demo
 
-[Live Demo](https://tu-link-en-vercel.com)
+[Live Demo](https://recipe-finder117.netlify.app/)
 ![Recipe Finder Screenshot](assets/app.png)
 
 
